@@ -6,13 +6,15 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class GenerarInsertChipCard {
-	public StringBuffer obtenerInsert(String f) {
+	public StringBuffer obtenerInsert(String f, boolean generarDelete) {
 		StringBuffer resultado = new StringBuffer();
 		BufferedReader br = null; 
 		try {
 			FileReader fr = new FileReader(f);
 			br = new BufferedReader(fr);
-
+			if(generarDelete) {
+				resultado.append("DELETE DBA1.TSCHIPPR\r\n");
+			}
 	         // Lectura del fichero
 	         String linea;
 	         String cabecera = br.readLine();
