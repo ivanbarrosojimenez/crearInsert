@@ -13,7 +13,7 @@ public class GenerarInsertChipCard {
 			FileReader fr = new FileReader(f);
 			br = new BufferedReader(fr);
 			if(generarDelete) {
-				resultado.append("DELETE DBA1.TSCHIPPR\r\n");
+				resultado.append("DELETE DBA1.TSCHIPPR;\r\n");
 			}
 	         // Lectura del fichero
 	         String linea;
