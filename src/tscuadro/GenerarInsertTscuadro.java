@@ -29,7 +29,7 @@ public class GenerarInsertTscuadro {
 		            
 		            if(contador>= inicio && contador <=fin) {
 			            Tscuadro cuadroLinea = new Tscuadro (linea, cabeceraConFormato);
-			            resultado.append(cuadroLinea.toString());
+			            resultado.append(cuadroLinea.toString().replaceAll("'", "''"));
 			            //System.out.println(resultado.capacity() + " " + contador);
 		            }
 		            contador++;
