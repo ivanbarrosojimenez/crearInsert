@@ -16,7 +16,7 @@ public class Main {
 		grabarFichero.crearFichero("salida/Insert_"+nombreFicheroEntrada+".sql", true);
 		grabarFichero.agregarAFichero(resultado.toString());
 		grabarFichero.cerrarFichero();
-		System.out.println("Creado fichero salida/Insert_"+nombreFicheroEntrada+".sql");
+		System.out.println("Creado fichero salida/Insert_"+nombreFicheroEntrada+".sql ");
 	}
 
 }
