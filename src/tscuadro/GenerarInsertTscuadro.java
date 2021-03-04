@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class GenerarInsertTscuadro {
-	public StringBuffer obtenerInsert(String f, boolean generarDelete) {
+	public StringBuffer obtenerInsert(String f, boolean generarDelete, int inicio, int fin) {
 		StringBuffer resultado = new StringBuffer();
 		BufferedReader br = null; 
 		try {
@@ -23,12 +23,17 @@ public class GenerarInsertTscuadro {
 	         String cabeceraConFormato = ("INSERT INTO DBA1.TSCUADRO (" + cabecera + ")  VALUES (");
 	         cabeceraConFormato= cabeceraConFormato.replaceAll(";", ", ");
 //	         System.out.println(cabeceraConFormato);
-	         
+	         int contador = 0;
 	         while((linea=br.readLine())!=null) {
 //		            System.out.println(linea);
-		            Tscuadro cuadroLinea = new Tscuadro (linea, cabeceraConFormato);
-//		            System.out.println(cuadroLinea.toString());
-		            resultado.append(cuadroLinea.toString());
+		            
+		            if(contador>= inicio && contador <=fin) {
+			            Tscuadro cuadroLinea = new Tscuadro (linea, cabeceraConFormato);
+			            resultado.append(cuadroLinea.toString());
+			            //System.out.println(resultado.capacity() + " " + contador);
+		            }
+		            contador++;
+
 	         }
 			
 			
