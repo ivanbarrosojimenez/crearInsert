@@ -182,7 +182,7 @@ public class Tscuadro {
 		+ getNRO_CONS() + ", '" + getZONA() + "', '" + getDISTRITO() + "', '" + getTIPO_MOV() + "', '"
 		+ getCOD_PREFERENCIA() + "', '" + getHOR_EXT1() + "', '" + getHOR_EXT2() + "', '" + getHOR_EXT3() + "', '"
 		+ getHOR_EXT4() + "', " + getAUDIT_FEC_ALTA() + ", " + getAUDIT_FEC_MODIFICACION() + ", '"
-		+ getAUDIT_COD_USUARIO() + "', '" + getPOBLACION_COMERCIAL() + "', '" + getIND_POB_COM() + "');/r/n";
+		+ getAUDIT_COD_USUARIO() + "', '" + getPOBLACION_COMERCIAL() + "', '" + getIND_POB_COM() + "'); \r\n";
 	}
 
 
