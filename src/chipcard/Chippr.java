@@ -67,8 +67,10 @@ public class Chippr {
 		IND_VIDEO_ASISA = iND_VIDEO_ASISA;
 	}
 	public String getIND_VIDEO_CHIPCARD() {
-		return IND_VIDEO_CHIPCARD;
+		//return IND_VIDEO_CHIPCARD;
+		return IND_VIDEO_CHIPCARD.equals("NULL")? "N":IND_VIDEO_CHIPCARD;
 	}
+		
 	public void setIND_VIDEO_CHIPCARD(String iND_VIDEO_CHIPCARD) {
 		IND_VIDEO_CHIPCARD = iND_VIDEO_CHIPCARD;
 	}
@@ -142,9 +144,9 @@ public class Chippr {
 	@Override
 	public String toString() {
 		return cabecera + "'" + NIF + "', " + COD_PROVE_MATRIZ + ", " + COD_MAT_OR
-				+ ", " + COD_PROVE + ", '" + NRO_COLEGIADO_OMC + "', '" + ESTADO
+				+ ", " + COD_PROVE + ", '" + getNRO_COLEGIADO_OMC() + "', '" + ESTADO 
 				+ "', " + getFECHA_ENVIO() + ", " + getFECHA_BAJA() + ", " + getFECHA_CHIPCARD()
-				+ ", '" + IND_VIDEO_ASISA + "', '" + IND_VIDEO_CHIPCARD + "'); \r\n";
+				+ ", '" + IND_VIDEO_ASISA + "', '" + getIND_VIDEO_CHIPCARD() + "'); \r\n";
 	}
 	
 	

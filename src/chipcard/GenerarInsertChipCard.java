@@ -12,7 +12,8 @@ public class GenerarInsertChipCard {
 		try {
 			FileReader fr = new FileReader(f);
 			br = new BufferedReader(fr);
-			if(generarDelete) {
+
+			if (generarDelete) {
 				resultado.append("DELETE DBA1.TSCHIPPR;\r\n");
 			}
 	         // Lectura del fichero
