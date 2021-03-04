@@ -26,11 +26,12 @@ public class GenerarInsertTscuadro {
 	         int contador = 0;
 	         while((linea=br.readLine())!=null) {
 //		            System.out.println(linea);
+	        	 linea = linea.replaceAll(";\"", ";").replaceAll("\";", ";").replaceAll("\"\"", "\"");
 		            
 		            if(contador>= inicio && contador <=fin) {
-			            Tscuadro cuadroLinea = new Tscuadro (linea.replaceAll("'", "''"), cabeceraConFormato);
+			            Tscuadro cuadroLinea = new Tscuadro (linea, cabeceraConFormato);
 			            resultado.append(cuadroLinea.toString());
-			            //System.out.println(resultado.capacity() + " " + contador);
+			            
 		            }
 		            contador++;
 
