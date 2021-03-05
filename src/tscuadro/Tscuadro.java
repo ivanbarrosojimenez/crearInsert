@@ -186,6 +186,24 @@ public class Tscuadro {
 		+ getAUDIT_COD_USUARIO() + "', '" + getPOBLACION_COMERCIAL() + "', '" + getIND_POB_COM() + "'); \r\n";
 	}
 
+	public String toStringSquirrel() {
+		return getTIPO_CUADRO() + "; " + getNUMERACION() + "; " + getTIPO_INTERFASE() + "; " + getCOD_DELEGACION()
+				+ "; " + getDELEGACION() + "; " + getTIPO_PROFESIONAL() + "; " + getESPECIALIDAD() + "; "
+				+ getSUBESPECIALIDAD() + "; " + getCOD_ESPEC() + "; " + getCOD_SUBESPEC() + "; " + getPRUEBA() + "; "
+				+ getPADRE() + "; " + getTRATAMIENTO() + "; " + getAPELLIDO1() + "; " + getAPELLIDO2() + "; "
+				+ getNOMBRE() + "; " + getTIPO_VIA() + "; " + getVIA() + "; " + getNUMERO() + "; " + getPISO() + "; "
+				+ getLETRA() + "; " + getESCALERA() + "; " + getPORTAL() + "; " + getCODIGO_POSTAL() + "; "
+				+ getPOBLACION() + "; " + getTELEFONO1() + "; " + getTELEFONO2() + "; " + getTELEFONO3() + "; "
+				+ getDIAS1() + "; " + getDIAS2() + "; " + getDIAS3() + "; " + getDIAS4() + "; " + getHORARIO1() + "; "
+				+ getHORARIO2() + "; " + getHORARIO3() + "; " + getHORARIO4() + "; " + getOBSERVACIONES() + "; "
+				+ getPPH() + "; " + getCAPITAL() + "; " + getORDEN_SERVICIO() + "; " + getPOSTAL_CLASIFICACION() + "; "
+				+ getIND_BUCODENTAL() + "; " + getIND_NO_PARTOS() + "; " + getTIPO_PROV() + "; " + getNRO_PROV() + "; "
+				+ getNRO_CONS() + "; " + getZONA() + "; " + getDISTRITO() + "; " + getTIPO_MOV() + "; "
+				+ getCOD_PREFERENCIA() + "; " + getHOR_EXT1() + "; " + getHOR_EXT2() + "; " + getHOR_EXT3() + "; "
+				+ getHOR_EXT4() + "; " + getAUDIT_FEC_ALTA_SQUIRREL() + "; " + getAUDIT_FEC_MODIFICACION_SQUIRREL() + "; "
+				+ getAUDIT_COD_USUARIO() + "; " + getPOBLACION_COMERCIAL() + "; " + getIND_POB_COM()+"\r\n";
+	}
+
 
 	private String obtenerFecha(String fecha) {
 		String fechaFormato = null;
@@ -482,6 +500,16 @@ public class Tscuadro {
 	public String getAUDIT_FEC_MODIFICACION() {
 		return AUDIT_FEC_MODIFICACION==null?"'0001-01-01'":"'"+this.AUDIT_FEC_MODIFICACION+"'";
 	}
+	
+	public String getAUDIT_FEC_ALTA_SQUIRREL() {
+		return AUDIT_FEC_ALTA==null?"2021-03-04":""+this.AUDIT_FEC_ALTA+"";
+	}
+
+
+	public String getAUDIT_FEC_MODIFICACION_SQUIRREL() {
+		return AUDIT_FEC_MODIFICACION==null?"0001-01-01":""+this.AUDIT_FEC_MODIFICACION+"";
+	}
+	
 
 
 	public String getAUDIT_COD_USUARIO() {

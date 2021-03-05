@@ -38,13 +38,13 @@ public class Main {
 		int ultimoValor = 0;
 		for (int i = MAX_LINEAS_PROCESAR, parte = 0; i < 400000; i += MAX_LINEAS_PROCESAR, parte++) {
 			GrabarFichero grabarFichero = new GrabarFichero();
-//			grabarFichero.crearFichero("salida/Insert_"+nombreFicheroEntrada+"_parte_"+parte+".sql", true);
-			StringBuffer resultado1 = generarInsertTscuadro.obtenerInsert("entrada/" + nombreFicheroEntrada + ".csv",
+			grabarFichero.crearFichero("salida/Insert_"+nombreFicheroEntrada+"_parte_"+parte+".sql", true);
+			StringBuffer resultado1 = generarInsertTscuadro.obtenerInsertSquirrel("entrada/" + nombreFicheroEntrada + ".csv",
 					generarDelete, ultimoValor, i);
-//			grabarFichero.agregarAFichero(resultado1.toString());
-//			System.out.println("parte "  + parte + " creando registros desde " +ultimoValor +" hasta " +i);
-//			ultimoValor = i+1;
-//			grabarFichero.cerrarFichero();
+			grabarFichero.agregarAFichero(resultado1.toString());
+			System.out.println("parte "  + parte + " creando registros desde " +ultimoValor +" hasta " +i);
+			ultimoValor = i+1;
+			grabarFichero.cerrarFichero();
 
 		}
 
