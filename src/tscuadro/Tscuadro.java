@@ -83,6 +83,8 @@ public class Tscuadro {
 		String [] partes;
 
 		try {
+			this.cabecera = cabecera;
+
 			partes = lineaCsv.split(";");
 			this.TIPO_CUADRO = partes[0];
 			this.NUMERACION = partes[1];
@@ -153,7 +155,6 @@ public class Tscuadro {
 //			this.COD_IDIOMA8 = partes[66];
 //			this.COD_IDIOMA9 = partes[67];
 //			this.COD_IDIOMA10 = partes[68];
-			this.cabecera = cabecera;
 
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -344,157 +345,157 @@ public class Tscuadro {
 
 
 	public String getDIAS1() {
-		return DIAS1;
+		return DIAS1 == null? "":DIAS1;
 	}
 
 
 	public String getDIAS2() {
-		return DIAS2;
+		return DIAS2 == null? "":DIAS2;
 	}
 
 
 	public String getDIAS3() {
-		return DIAS3;
+		return DIAS3 == null? "":DIAS3;
 	}
 
 
 	public String getDIAS4() {
-		return DIAS4;
+		return DIAS4 == null? "":DIAS4;
 	}
 
 
 	public String getHORARIO1() {
-		return HORARIO1;
+		return HORARIO1 == null? "":HORARIO1;
 	}
 
 
 	public String getHORARIO2() {
-		return HORARIO2;
+		return HORARIO2 == null? "":HORARIO2;
 	}
 
 
 	public String getHORARIO3() {
-		return HORARIO3;
+		return HORARIO3 == null? "":HORARIO3;
 	}
 
 
 	public String getHORARIO4() {
-		return HORARIO4;
+		return HORARIO4 == null? "":HORARIO4;
 	}
 
 
 	public String getOBSERVACIONES() {
-		return OBSERVACIONES;
+		return OBSERVACIONES == null? "":OBSERVACIONES;
 	}
 
 
 	public String getPPH() {
-		return PPH;
+		return PPH == null? "":PPH;
 	}
 
 
 	public String getCAPITAL() {
-		return CAPITAL;
+		return CAPITAL == null? "":CAPITAL;
 	}
 
 
 	public String getORDEN_SERVICIO() {
-		return ORDEN_SERVICIO;
+		return ORDEN_SERVICIO == null? "":ORDEN_SERVICIO;
 	}
 
 
 	public String getPOSTAL_CLASIFICACION() {
-		return POSTAL_CLASIFICACION;
+		return POSTAL_CLASIFICACION == null? "":POSTAL_CLASIFICACION;
 	}
 
 
 	public String getIND_BUCODENTAL() {
-		return IND_BUCODENTAL;
+		return IND_BUCODENTAL == null? "":IND_BUCODENTAL;
 	}
 
 
 	public String getIND_NO_PARTOS() {
-		return IND_NO_PARTOS;
+		return IND_NO_PARTOS == null? "":IND_NO_PARTOS;
 	}
 
 
 	public String getTIPO_PROV() {
-		return TIPO_PROV;
+		return TIPO_PROV == null? "":TIPO_PROV;
 	}
 
 
 	public String getNRO_PROV() {
-		return NRO_PROV;
+		return NRO_PROV == null? "0":NRO_PROV;
 	}
 
 
 	public String getNRO_CONS() {
-		return NRO_CONS;
+		return NRO_CONS == null? "0":NRO_CONS;
 	}
 
 
 	public String getZONA() {
-		return ZONA;
+		return ZONA == null? "":ZONA;
 	}
 
 
 	public String getDISTRITO() {
-		return DISTRITO;
+		return DISTRITO == null? "":DISTRITO;
 	}
 
 
 	public String getTIPO_MOV() {
-		return TIPO_MOV;
+		return TIPO_MOV == null? "":TIPO_MOV;
 	}
 
 
 	public String getCOD_PREFERENCIA() {
-		return COD_PREFERENCIA;
+		return COD_PREFERENCIA == null? "":COD_PREFERENCIA;
 	}
 
 
 	public String getHOR_EXT1() {
-		return HOR_EXT1;
+		return HOR_EXT1 == null? "":HOR_EXT1;
 	}
 
 
 	public String getHOR_EXT2() {
-		return HOR_EXT2;
+		return HOR_EXT2 == null? "":HOR_EXT2;
 	}
 
 
 	public String getHOR_EXT3() {
-		return HOR_EXT3;
+		return HOR_EXT3 == null? "":HOR_EXT3;
 	}
 
 
 	public String getHOR_EXT4() {
-		return HOR_EXT4;
+		return HOR_EXT4 == null? "":HOR_EXT4;
 	}
 
 
 	public String getAUDIT_FEC_ALTA() {
-		return AUDIT_FEC_ALTA==null?"NULL":"'"+this.AUDIT_FEC_ALTA+"'";
+		return AUDIT_FEC_ALTA==null?"'2021-03-04'":"'"+this.AUDIT_FEC_ALTA+"'";
 	}
 
 
 	public String getAUDIT_FEC_MODIFICACION() {
-		return AUDIT_FEC_MODIFICACION==null?"NULL":"'"+this.AUDIT_FEC_MODIFICACION+"'";
+		return AUDIT_FEC_MODIFICACION==null?"'0001-01-01'":"'"+this.AUDIT_FEC_MODIFICACION+"'";
 	}
 
 
 	public String getAUDIT_COD_USUARIO() {
-		return AUDIT_COD_USUARIO;
+		return AUDIT_COD_USUARIO == null? "":AUDIT_COD_USUARIO;
 	}
 
 
 	public String getPOBLACION_COMERCIAL() {
-		return POBLACION_COMERCIAL;
+		return POBLACION_COMERCIAL == null? "":POBLACION_COMERCIAL;
 	}
 
 
 	public String getIND_POB_COM() {
-		return IND_POB_COM;
+		return IND_POB_COM == null? "":IND_POB_COM;
 	}
 
 
