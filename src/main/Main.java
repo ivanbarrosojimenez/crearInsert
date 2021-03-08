@@ -29,20 +29,23 @@ public class Main {
 		*/
 		// Generacion TSCUADRO
 		
-		final String nombreFicheroEntrada = "TSCUADRO_040321_v2";
+		final String nombreFicheroEntrada = "TSCUADRO_050321";
 		GenerarInsertTscuadro generarInsertTscuadro = new GenerarInsertTscuadro();
-		int MAX_LINEAS_PROCESAR = 10000;
+//		int MAX_LINEAS_PROCESAR = 10000;
+		int MAX_LINEAS_PROCESAR = 400000;
 		
 		
 
 		int ultimoValor = 0;
-		for (int i = MAX_LINEAS_PROCESAR, parte = 0; i < 400000; i += MAX_LINEAS_PROCESAR, parte++) {
+//		for (int i = MAX_LINEAS_PROCESAR, parte = 0; i < 400000; i += MAX_LINEAS_PROCESAR, parte++) {
+		for (int i = MAX_LINEAS_PROCESAR; i < 400001; i += MAX_LINEAS_PROCESAR) {
 			GrabarFichero grabarFichero = new GrabarFichero();
-			grabarFichero.crearFichero("salida/Insert_"+nombreFicheroEntrada+"_parte_"+parte+".sql", true);
+//			grabarFichero.crearFichero("salida/Insert_"+nombreFicheroEntrada+"_parte_"+parte+".sql", true);
+			grabarFichero.crearFichero("salida/Insert_"+nombreFicheroEntrada+".sql", true);
 			StringBuffer resultado1 = generarInsertTscuadro.obtenerInsertSquirrel("entrada/" + nombreFicheroEntrada + ".csv",
 					generarDelete, ultimoValor, i);
 			grabarFichero.agregarAFichero(resultado1.toString());
-			System.out.println("parte "  + parte + " creando registros desde " +ultimoValor +" hasta " +i);
+//			System.out.println("parte "  + parte + " creando registros desde " +ultimoValor +" hasta " +i);
 			ultimoValor = i+1;
 			grabarFichero.cerrarFichero();
 
