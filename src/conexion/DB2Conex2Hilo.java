@@ -8,24 +8,25 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-public class DB2Conex {
-
+public class DB2Conex2Hilo extends Thread{
+    Thread t;
 	private String nom_server;
 	private String puerto;
 	private String BD;
 	private String user;
 	private String pass;
 	ResultSet resultado = null;
-	Connection conn = null;
+	static Connection conn = null;
 	Statement stmt = null;
 	boolean verbose = false;
+	private String update = "";
 
 	public void miLog(String cad) {
 		if (verbose)
 			System.out.println(cad);
 	}
 
-	public DB2Conex(String nserv, String pu, String BaseD, String usuario,
+	public DB2Conex2Hilo(String nserv, String pu, String BaseD, String usuario,
 			String passw) {
 		nom_server = nserv;
 		puerto = pu;
@@ -34,12 +35,13 @@ public class DB2Conex {
 		pass = passw;
 	}
 
-	public DB2Conex(String usuario, String passw) {
+	public DB2Conex2Hilo(String usuario, String passw, String update) {
 		nom_server = "10.28.110.1";
 		puerto = "446";
 		BD = "LOC1";
 		user = usuario;
 		pass = passw;
+		this.update = update;
 	}
 
 	public void cierraConex() throws SQLException {
@@ -90,6 +92,15 @@ public class DB2Conex {
 
 	}
 
+	 @Override
+	public void run() {
+		try {
+			ejecutaUpdateSQLNoConex(update);
+		} catch (Exception e) {
+			//e.printStackTrace();
+		}
+	}
+	 
 	public void ejecutaUpdateSQL(String sentencia)
 			throws ClassNotFoundException, SQLException {
 		String databaseURL = "jdbc:db2://" + nom_server + ":" + puerto + "/"

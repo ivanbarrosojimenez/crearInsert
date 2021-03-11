@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import conexion.DB2Conex;
+import conexion.DB2Conex2Hilo;
 
 public class GenerarInsertTscuadro {
 	public StringBuffer obtenerInsert(String f, boolean generarDelete, int inicio, int fin) {
@@ -42,30 +43,12 @@ public class GenerarInsertTscuadro {
 					linea = linea.replaceAll(";\"", ";").replaceAll("\";", ";").replaceAll("\"\"", "\"").replaceAll("     ", "");
 					Tscuadro cuadroLinea = new Tscuadro(linea.replaceAll("'", "''"), cabeceraConFormato);
 					resultado.append(cuadroLinea.toString());
-//					try {
-//						if(contador >= 25882) {
-//							conexion.ejecutaUpdateSQLNoConex(cuadroLinea.toString());
-//
+					
+//						if(contador >= 0) {
+//							new DB2Conex2Hilo("US6032", "US0321", cuadroLinea.toString());
 //						}
-//
-//					} catch (ClassNotFoundException e) {
-//						e.printStackTrace();
-//						System.out.println(cuadroLinea.toString());
-//						System.out.println(contador);
-//
-//					} catch (SQLException e) {
-//						if(e.toString().contains("-803")){
-//							System.out.println("Continuar error 803");
-//						} else {
-//							e.printStackTrace();
-//							System.out.println(cuadroLinea.toString());
-//							System.out.println(contador);
-//						}
-//						
-//
-//
-//					}
 
+					
 				}
 				contador++;
 

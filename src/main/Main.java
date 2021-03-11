@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import conexion.DB2Conex;
 import fichero.GrabarFichero;
+import inserts.InsertarSQL;
 import tscuadro.GenerarInsertTscuadro;
 
 public class Main {
@@ -31,22 +32,26 @@ public class Main {
 		
 		final String nombreFicheroEntrada = "TSCUADRO_040321_v2";
 		GenerarInsertTscuadro generarInsertTscuadro = new GenerarInsertTscuadro();
-		int MAX_LINEAS_PROCESAR = 10000;
+		int MAX_LINEAS_PROCESAR = 200000;
 		
 		
 
-		int ultimoValor = 0;
-		for (int i = MAX_LINEAS_PROCESAR, parte = 0; i < 400000; i += MAX_LINEAS_PROCESAR, parte++) {
-			GrabarFichero grabarFichero = new GrabarFichero();
-			grabarFichero.crearFichero("salida/Insert_"+nombreFicheroEntrada+"_parte_"+parte+".sql", true);
-			StringBuffer resultado1 = generarInsertTscuadro.obtenerInsertSquirrel("entrada/" + nombreFicheroEntrada + ".csv",
-					generarDelete, ultimoValor, i);
-			grabarFichero.agregarAFichero(resultado1.toString());
-			System.out.println("parte "  + parte + " creando registros desde " +ultimoValor +" hasta " +i);
-			ultimoValor = i+1;
-			grabarFichero.cerrarFichero();
-
-		}
+//		int ultimoValor = 0;
+//		for (int i = MAX_LINEAS_PROCESAR, parte = 0; i < 400001; i += MAX_LINEAS_PROCESAR, parte++) {
+//			GrabarFichero grabarFichero = new GrabarFichero();
+//			grabarFichero.crearFichero("salida/Insert_"+nombreFicheroEntrada+"_parte_"+parte+".sql", true);
+//			StringBuffer resultado1 = generarInsertTscuadro.obtenerInsert("entrada/" + nombreFicheroEntrada + ".csv",
+//					generarDelete, ultimoValor, i);
+//			grabarFichero.agregarAFichero(resultado1.toString());
+//			System.out.println("parte "  + parte + " creando registros desde " +ultimoValor +" hasta " +i);
+//			ultimoValor = i+1;
+//			grabarFichero.cerrarFichero();
+//
+//		}
+		
+		InsertarSQL insertarSQL = new InsertarSQL("", "");
+		insertarSQL.insertar("salida/Insert_TSCUADRO_040321_v2_parte_0.sql");
+		
 
 
 		
